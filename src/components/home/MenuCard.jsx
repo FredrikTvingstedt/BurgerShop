@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Popup from 'reactjs-popup';
 
-const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
+const MenuCard = ({ itemNum, burgerSrc, price, title, info, cal, handler, delay = 0 }) => {
   return (
     <motion.div
       className="menuCard"
@@ -22,9 +22,11 @@ const MenuCard = ({ itemNum, burgerSrc, price, title, handler, delay = 0 }) => {
       <main>
         <img src={burgerSrc} alt={itemNum} />
 
-        <h5>₹{price}</h5>
+        <h5>${price}</h5>
 
         <p>{title}</p>
+        <p>{info}</p>
+        <p>{cal}Cal.</p>
         <Popup trigger=
                 {<button onClick={() => handler(itemNum)}>Buy Now</button>}
                >

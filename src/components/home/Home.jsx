@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; import Founder from "./Founder";
+import { motion } from "framer-motion"; 
 import Menu from "./Menu";
 
 const Home = () => {
@@ -50,7 +50,7 @@ return (
         </section>
         
 <Menu />
-<Founder />
+
 </>
 );
 };
