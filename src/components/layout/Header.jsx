@@ -18,7 +18,6 @@ const Header = ({ isAuthenticated = false }) => {
                 </Link>
                 <DropdownMenu />
             </div>
-
         </nav>
     );
 };

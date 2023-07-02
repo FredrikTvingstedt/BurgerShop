@@ -25,12 +25,12 @@ return (
                     transition={{
                     delay: 0.2,
                 }}
-            >
+            >   
                 Give yourself a tasty burger.
                 </motion.p>
             </div>
 
-            <motion.a 
+            <motion.a className="explore-button"
                 href="#menu" 
                 initial={{
                 y: "-100%",

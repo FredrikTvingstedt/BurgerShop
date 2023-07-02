@@ -3,10 +3,12 @@
 .home {
   height: 100vh;
   overflow-x: hidden;
+  font-weight: 600;
 
   div {
     padding-left: 8rem;
-    padding-top: 15rem;
+    padding-top: 1rem;
+    color: white;
     > h1 {
       font-size: 4rem;
       text-transform: uppercase;
@@ -48,12 +50,24 @@
   }
 }
 
+.explore-button {
+  font-weight: 500;
+}
+
+.explore-button:hover {
+  color: black;
+}
+
 @media screen and (max-width: 600px) {
   .home {
     > div {
       text-align: center;
       padding-top: 10rem;
       padding-left: 0rem;
+
+      > h1 {
+        color:white;
+      }
     }
 
     > a {
