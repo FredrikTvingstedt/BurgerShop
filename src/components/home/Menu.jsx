@@ -32,7 +32,7 @@ const Menu = () => {
                 title="Double Quarter Pounder with Cheese" 
                 info="Double Quarter Pounder with Cheese features two quarter pound 100% fresh beef burger patties that are hot, deliciously juicy and cooked when you order. "
                 cal="740"
-                delay={0.1}
+                delay={0.5}
                 handler={addToCartHandler}
                 />
 
@@ -52,7 +52,7 @@ const Menu = () => {
                 title="Quarter Pounder with Cheese" 
                 info="Quarter Pounder with Cheese burger features a ¼ lb. of 100% fresh beef that’s hot, deliciously juicy. Each burger is topped with slivered onions"
                 cal="520"
-                delay={0.8}
+                delay={0.1}
                 handler={addToCartHandler} 
                 />
 
@@ -70,7 +70,7 @@ const Menu = () => {
                 title="Double Cheeseburger" 
                 info="Double Cheeseburger features two 100% pure all beef patties. It's topped with tangy pickles, chopped onions, ketchup, mustard, and two melty American cheese slices."
                 cal="450"
-                delay={0.5} 
+                delay={0.8} 
                 handler={addToCartHandler}
                 />
                 
