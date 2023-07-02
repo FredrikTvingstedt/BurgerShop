@@ -20,11 +20,12 @@ return (
         <section className="home">
             <div>
                 <motion.h1 {...options}>Burger Shop</motion.h1>
-                <motion.p
-                    {...options}
-                    transition={{
-                    delay: 0.2,
-                }}
+                <motion.p  
+                    className="burger-text"
+                        {...options}
+                        transition={{
+                        delay: 0.2,
+                    }}
             >   
                 Give yourself a tasty burger.
                 </motion.p>

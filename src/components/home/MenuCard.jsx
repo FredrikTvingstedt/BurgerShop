@@ -28,8 +28,9 @@ const MenuCard = ({ itemNum, burgerSrc, price, title, info, cal, handler, delay 
         <Popup trigger=
           {<button onClick={() => handler(itemNum)}>Buy Now</button>}
             >
-              <div style={{color:"black", transform: 'translate(0%,-500%)', backgroundColor: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'}}>
-                Added to cart!
+              <div style={{color:"black", transform: 'translate(0%,-300%)', backgroundColor: 'lightgreen', padding: '15px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'}}>
+                <p>Added to cart!</p>
+                <p>+${price}</p>
               </div>
         </Popup>
       </main>

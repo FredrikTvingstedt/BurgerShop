@@ -13,10 +13,10 @@ const Header = ({ isAuthenticated = false }) => {
             </motion.div>
 
             <div>
-                <Link to="/cart">
+            <Link to="/cart" style={{ marginRight: '30px' }}>
                 <FiShoppingCart />
                 </Link>
-                <DropdownMenu />
+                <DropdownMenu/>
             </div>
         </nav>
     );

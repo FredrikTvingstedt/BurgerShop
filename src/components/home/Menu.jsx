@@ -15,7 +15,7 @@ const Menu = () => {
 
     return (
         <section id="menu">
-            <h1>MENU</h1>
+            <h1>Menu</h1>
 
             <div class = "menu-first">
                 <MenuCard itemNum={1} burgerSrc={burger1} 
@@ -97,7 +97,7 @@ const Menu = () => {
                 <MenuCard itemNum={9} burgerSrc={milkshake1} 
                 price={1.5}
                 title="Hot Caramel Sundae" 
-                info="Treat yourself to a Hot Caramel Sundae! This Caramel Sundae combines creamy vanilla soft serve and warm, buttery caramel topping."
+                info="Treat yourself with a Hot Caramel Sundae! This Caramel Sundae combines creamy vanilla soft serve and warm, buttery caramel topping."
                 cal="330"
                 delay={0.8}
                 handler={addToCartHandler}
