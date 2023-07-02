@@ -3,8 +3,10 @@
 #menu {
   width: 100%;
   min-height: 100vh;
-  background-color: white;
-  padding: 4rem;
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
 
   > h1 {
     font-size: 2rem;
@@ -18,8 +20,12 @@
   }
 }
 
-.menu-first, .menu-second, .menu-third {
-  padding-bottom: 4rem;
+.menu-first, .menu-second {
+  padding-bottom: 3rem;
+}
+
+.menu-third{
+  padding-bottom: 1rem;
 }
 
 .menuCard {

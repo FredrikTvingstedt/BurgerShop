@@ -59,7 +59,7 @@ const Menu = () => {
                 <MenuCard itemNum={5} burgerSrc={burger5} 
                 price={5.5}
                 title="Quarter Pounder with Cheese Bacon" 
-                info="Quarter Pounder with Cheese Bacon burger features thick-cut applewood smoked bacon atop a ¼ lb. of 100%  fresh beef that's cooked when you order."
+                info="Quarter Pounder with Cheese Bacon burger features thick-cut wood smoked bacon atop a ¼ lb. of 100%  fresh beef that's cooked when you order."
                 cal="630"
                 delay={0.5} 
                 handler={addToCartHandler}
@@ -73,8 +73,6 @@ const Menu = () => {
                 delay={0.8} 
                 handler={addToCartHandler}
                 />
-                
-            
             </div>
 
             <div class = "menu-third">
