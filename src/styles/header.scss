@@ -30,14 +30,20 @@ nav {
       > svg {
         color: $red;
         transition: inherit;
-        font-size: 1.5rem;
+        font-size: 2rem;
         &:hover {
           color: $lightdark;
         }
       }
+
+      &.fastfood svg {
+        font-size: 4rem;
+      }
     }
   }
 }
+
+
 
 @media screen and (max-width: 600px) {
   nav {

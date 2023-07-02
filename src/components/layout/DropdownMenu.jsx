@@ -6,8 +6,11 @@ function DropdownMenu() {
 
   useEffect(() => {
     const navs = [
-      { name: "Login", path: "/login" },
+      {name: "Login", path: "/login" },
+      {name: "Home", path: "/" },
       {name:"Orders", path:"/myorders"},
+      {name: "Contact", path: "/contact" },
+      {name: "About", path: "/about" },
       {name:"Logout", path:"/login"}
       
     ];
@@ -15,16 +18,12 @@ function DropdownMenu() {
   }, []);
 
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div className="container">
-          <a className="navbar-brand" href="#">
-          
-          </a>
+    
+      <navbar>
           <div class="btn-group">
             <button
               type="button"
-              class="btn btn-primary dropdown-toggle"
+              class="btn btn-dark dropdown-toggle"
               data-bs-toggle="dropdown"
               data-bs-display="static"
               aria-expanded="false"
@@ -43,9 +42,8 @@ function DropdownMenu() {
               ))}
             </ul>
           </div>
-        </div>
-      </nav>
-    </div>
+      </navbar>
+   
   );
 }
 
