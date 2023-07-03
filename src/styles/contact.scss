@@ -1,7 +1,7 @@
 @import "colors";
 
 .contact {
-  height: 100vh;
+  height: 120vh;
   width: 100%;
   background-image: url("../assets/bg.png");
   background-repeat: no-repeat;
@@ -53,8 +53,6 @@
     }
   }
 }
-
-
 
 @media screen and (max-width: 600px) {
   .contact {

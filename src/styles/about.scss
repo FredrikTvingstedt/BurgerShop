@@ -2,26 +2,32 @@
 
 .about {
   width: 100%;
-  background-color: $pink;
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 
   > main {
     background-color: white;
-    max-width: 900px;
+    max-width: 700px;
     height: 100%;
     margin: auto;
 
     > h1 {
-      font: 500 3rem "Roboto";
-      color: $red;
+      
+      color: white;
       padding: 1rem 2rem;
       text-transform: uppercase;
-      background-color: $dark;
+      background-color: rgb(156, 0, 60);
+      text-align: center;
+      text-shadow: 0 0 14px black;
+      border-left: solid white 1px;
+      border-right: solid white 1px
     }
 
     > article {
       margin: 2rem 0;
       > h4 {
-        font: 100 2rem "Roboto";
+        font: 100 3rem "Roboto";
         text-transform: uppercase;
         text-align: center;
         padding: 2rem 0;
@@ -58,7 +64,9 @@
     > div {
       background-color: $dark;
       padding: 2rem;
+      height: 300px;
       color: white;
+      border-bottom: solid white 1px;
       > h2 {
         text-align: center;
         text-transform: uppercase;
@@ -68,7 +76,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
+      
         > div {
           margin: 2rem;
           > img {
@@ -100,6 +108,14 @@
 
     > article > p {
       width: 100%;
+    }
+
+    > article{
+      height: 120px;
+    }
+
+    > div {
+      visibility: hidden;
     }
 
     > div > article {
