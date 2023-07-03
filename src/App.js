@@ -1,8 +1,10 @@
+import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import Contact from "./components/contact/Contact";
+import NotFound from "./components/notfound/NotFound";
 // Add module imports for CART
 
 // Add module imports for Shipping
@@ -13,7 +15,6 @@ import Profile from "./components/profile/Profile";
 
 import OrderDetails from "./components/myOrders/OrderDetails";
 import About from "./components/about/About";
-
 
 import "./styles/app.scss";
 import "./styles/header.scss";
@@ -29,6 +30,7 @@ import "./styles/profile.scss";
 import "./styles/table.scss";
 import "./styles/orderDetails.scss";
 import "./styles/about.scss";
+import "./styles/notfound.scss";
 
 function App() {
   return (
@@ -41,6 +43,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/me" element={<Profile />} />
         <Route path="/order/:id" element={<OrderDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
