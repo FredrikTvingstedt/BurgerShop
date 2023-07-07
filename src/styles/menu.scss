@@ -8,17 +8,14 @@
   background-size: cover;
   padding: 2rem;
   border-top: ridge black 5px;
- 
 
   > h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     padding: 2rem;
-    color:white;
-    font-size: 3rem;
+    color: white;
     text-shadow: 0 0 14px black;
     text-transform: uppercase;
-    
   }
 
   > div {
@@ -27,11 +24,12 @@
   }
 }
 
-.menu-first, .menu-second {
+.menu-first,
+.menu-second {
   padding-bottom: 3rem;
 }
 
-.menu-third{
+.menu-third {
   padding-bottom: 1rem;
 }
 
@@ -40,6 +38,8 @@
   width: 30%;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.495);
+  display: flex;
+  flex-direction: column;
 
   > div {
     border-radius: 20px 20px 0 0;
@@ -48,14 +48,14 @@
     align-items: center;
     padding: 2rem;
     color: white;
-    height: 4rem;
   }
 
   > main {
-    padding: 2rem;
+    padding: 1rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-grow: 1;
 
     > img {
       height: 15rem;
@@ -65,11 +65,15 @@
 
     > h5 {
       font-size: 1.8rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
+
     > p {
       text-transform: uppercase;
       letter-spacing: 2px;
       padding: 1rem 0;
+      margin-bottom: 1rem;
     }
 
     > button {
@@ -98,4 +102,3 @@
     margin: 1rem 0;
   }
 }
-

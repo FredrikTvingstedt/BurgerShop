@@ -6,7 +6,9 @@
 .page-not-found {
     
     text-align: center;
-    background-color: #f7f7f7;
+    background-image: url("../assets/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
