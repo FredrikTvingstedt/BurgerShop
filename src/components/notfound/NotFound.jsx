@@ -1,10 +1,15 @@
 import React from "react";
+import burger from "../../assets/burger6.png";
 
 const NotFound = () => {
   return (
-    <div>
-      <h2>Page Not Found</h2>
-      <p>The requested page does not exist.</p>
+    <div className="page-not-found">
+      <div className="page-not-found-child">
+        <h4>404 Page Not Found</h4>
+        <p>Oops! Looks like you've reached a page that doesn't exist.</p>
+        <img src={burger} alt="Hamburger" />
+        <p>But don't worry, we have plenty of delicious burgers waiting for you at <a href="/">Burger Shop!</a></p>
+      </div>
     </div>
   );
 };

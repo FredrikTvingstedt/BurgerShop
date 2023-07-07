@@ -1,2 +1,43 @@
 @import "colors";
 
+
+
+
+.page-not-found {
+    
+    text-align: center;
+    background-color: #f7f7f7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;    
+}
+
+.page-not-found-child{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    margin: 2rem;
+    
+    > h4 {
+        font: 100 3rem "Roboto";
+        text-transform: uppercase;
+        text-align: center;
+        padding: 2rem 0;
+    }
+    
+    >p {
+        color: #555555;
+        margin-bottom: 30px;
+        letter-spacing: 3px;
+        word-spacing: 3px;
+    }
+        
+    >img {
+        width: 200px;
+        height: auto;
+    }
+
+}
+    
