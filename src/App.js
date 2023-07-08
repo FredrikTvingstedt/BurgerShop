@@ -5,13 +5,11 @@ import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import Contact from "./components/contact/Contact";
 import NotFound from "./components/notfound/NotFound";
-// Add module imports for CART
-
-// Add module imports for Shipping
-
+import Cart from "./components/cart/Cart";
+import Shipping from "./components/cart/Shipping";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
-// Add module imports for MY ORDERS
+import MyOrders from "./components/myOrders/MyOrders";
 
 import OrderDetails from "./components/myOrders/OrderDetails";
 import About from "./components/about/About";
@@ -36,12 +34,16 @@ function App() {
   return (
     <Router>
       <Header isAuthenticated={true} />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/me" element={<Profile />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/myorders" element={<MyOrders />} />
+        <Route path="/shipping" element={<Shipping />} />
         <Route path="/order/:id" element={<OrderDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
