@@ -17,7 +17,7 @@ const Menu = () => {
         <section id="menu">
             <h1>Menu</h1>
 
-            <div class = "menu-first">
+            <div className = "menu-first">
                 <MenuCard itemNum={1} burgerSrc={burger1} 
                 price={2.50}
                 title="Cheese Burger" 
@@ -46,7 +46,7 @@ const Menu = () => {
                 />
             </div>
 
-            <div class = "menu-second">
+            <div className = "menu-second">
                 <MenuCard itemNum={4} burgerSrc={burger4} 
                 price={5.00}
                 title="Quarter Pounder with Cheese" 
@@ -75,7 +75,7 @@ const Menu = () => {
                 />
             </div>
 
-            <div class = "menu-third">
+            <div className = "menu-third">
                 <MenuCard itemNum={7} burgerSrc={fries1} 
                 price={2.00}
                 title="World Famous Fries" 
