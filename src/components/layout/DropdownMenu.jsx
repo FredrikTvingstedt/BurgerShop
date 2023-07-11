@@ -19,22 +19,22 @@ function DropdownMenu() {
 
   return (
     
-      <navbar>
-          <div class="btn-group">
+      <nav>
+          <div className="btn-group">
             <button
               type="button"
-              class="btn btn-dark dropdown-toggle"
+              className="btn btn-dark dropdown-toggle"
               data-bs-toggle="dropdown"
               data-bs-display="static"
               aria-expanded="false"
             >
               Menu
             </button>
-            <ul class="dropdown-menu dropdown-menu-end">
+            <ul className="dropdown-menu dropdown-menu-end">
               {navLinks.map((d, i) => (
                 <li key={i}>
                   <Link to={d.path}>
-                    <button class="dropdown-item" type="button">
+                    <button className="dropdown-item" type="button">
                       {d.name}
                     </button>
                   </Link>
@@ -42,7 +42,7 @@ function DropdownMenu() {
               ))}
             </ul>
           </div>
-      </navbar>
+      </nav>
    
   );
 }
