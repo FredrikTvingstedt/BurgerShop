@@ -5,7 +5,6 @@ import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
 import Contact from "./components/contact/Contact";
 import NotFound from "./components/notfound/NotFound";
-import Cart from "./components/cart/Cart";
 import Shipping from "./components/cart/Shipping";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
@@ -44,7 +43,6 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/me" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/store" element={<Store />} />
           <Route path="/myorders" element={<MyOrders />} />
           <Route path="/shipping" element={<Shipping />} />

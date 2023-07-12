@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+
 function DropdownMenu() {
   const [navLinks, setNavLinks] = useState([]);
 
@@ -8,9 +9,10 @@ function DropdownMenu() {
     const navs = [
       {name: "Login", path: "/login" },
       {name: "Home", path: "/" },
-      {name:"Orders", path:"/myorders"},
+      {name: "Orders", path:"/myorders"},
       {name: "Contact", path: "/contact" },
       {name: "About", path: "/about" },
+      {name: "Store", path: "/store" },
       {name:"Logout", path:"/login"}
       
     ];
@@ -19,8 +21,8 @@ function DropdownMenu() {
 
   return (
     
-      <nav>
-          <div className="btn-group">
+      <navbar>
+          <div className="btn-group" style={{ paddingLeft: "20px" }}>
             <button
               type="button"
               className="btn btn-dark dropdown-toggle"
@@ -42,7 +44,7 @@ function DropdownMenu() {
               ))}
             </ul>
           </div>
-      </nav>
+      </navbar>
    
   );
 }
