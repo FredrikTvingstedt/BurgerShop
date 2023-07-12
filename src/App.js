@@ -10,6 +10,8 @@ import Shipping from "./components/cart/Shipping";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
 import MyOrders from "./components/myOrders/MyOrders";
+import { Store } from "./pages/Store";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 
 import OrderDetails from "./components/myOrders/OrderDetails";
 import About from "./components/about/About";
@@ -32,24 +34,27 @@ import "./styles/notfound.scss";
 
 function App() {
   return (
-    <Router>
-      <Header isAuthenticated={true} />
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/me" element={<Profile />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/myorders" element={<MyOrders />} />
-        <Route path="/shipping" element={<Shipping />} />
-        <Route path="/order/:id" element={<OrderDetails />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+    <ShoppingCartProvider>  
+      <Router>
+        <Header isAuthenticated={true} />
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/me" element={<Profile />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/myorders" element={<MyOrders />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/order/:id" element={<OrderDetails />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
 
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </ShoppingCartProvider>
   );
 }
 
