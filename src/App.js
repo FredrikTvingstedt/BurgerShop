@@ -1,5 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Store } from "./components/home/Store";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 import Home from "./components/home/Home";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
@@ -9,9 +11,6 @@ import Shipping from "./components/cart/Shipping";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
 import MyOrders from "./components/myOrders/MyOrders";
-import { Store } from "./components/home/Store";
-import { ShoppingCartProvider } from "./context/ShoppingCartContext"
-
 import OrderDetails from "./components/myOrders/OrderDetails";
 import About from "./components/about/About";
 
@@ -30,6 +29,8 @@ import "./styles/table.scss";
 import "./styles/orderDetails.scss";
 import "./styles/about.scss";
 import "./styles/notfound.scss";
+import "./styles/shoppingcart.scss";
+import "./styles/cartItem.scss";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import { Button, Stack } from "react-bootstrap";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
 import storeItems from "../../data/items.json";
-import { formatCurrency } from "../../utilities/formatCurrency";
+
 
 export function CartItem({ id, quantity }) {
   const { increaseCartQuantity, decreaseCartQuantity } = useShoppingCart();
@@ -22,15 +22,18 @@ export function CartItem({ id, quantity }) {
         </div>
       </div>
 
-      <div> {formatCurrency(item.price * quantity)}</div>
-            
-      <div className="d-flex align-items-right justify-content-center">      
-      <Button className="bg-dark" onClick={() => decreaseCartQuantity(item.id)}>-</Button> 
-      <div> 
-      {quantity}    
-      </div>
-      <Button className="bg-dark" onClick={() => increaseCartQuantity(item.id)}>+</Button>
-      </div>
+      <div>  
+        <div className="d-flex align-items-right justify-content-center">      
+          <Button className="bg-dark" onClick={() => decreaseCartQuantity(item.id)}>-</Button> 
+          <div className="quantity">  
+          {quantity}    
+          </div>
+          <Button className="bg-dark" onClick={() => increaseCartQuantity(item.id)}>+</Button>
+          </div>
+        </div>
+      
     </Stack>
   );
 }
+
+
