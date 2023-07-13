@@ -1,5 +1,5 @@
 import React from "react";
-import burger from "../../assets/burger6.png";
+import burger from "../../assets/notfound.png";
 
 const NotFound = () => {
   return (
