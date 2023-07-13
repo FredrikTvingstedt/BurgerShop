@@ -1,0 +1,23 @@
+#store {
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2rem;
+  border-top: ridge black 5px;
+
+  > h1 {
+    font-size: 3rem;
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    text-shadow: 0 0 14px black;
+    text-transform: uppercase;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

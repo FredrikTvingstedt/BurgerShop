@@ -4,6 +4,7 @@ import storeItems from "../../data/items.json"
 
 export function Store() {
   return (
+  <section id="store"> 
     <>
       <h1>Store</h1>
       <Row md={2} xs={1} lg={3} className="g-3">
@@ -14,6 +15,7 @@ export function Store() {
         ))}
       </Row>
     </>
+    </section>
   )
 }
 
