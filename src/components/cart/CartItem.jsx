@@ -4,38 +4,33 @@ import storeItems from "../../data/items.json";
 import { formatCurrency } from "../../utilities/formatCurrency";
 
 export function CartItem({ id, quantity }) {
-  const { removeFromCart } = useShoppingCart();
+  const { increaseCartQuantity, decreaseCartQuantity } = useShoppingCart();
   const item = storeItems.find((i) => i.id === id);
   if (item == null) return null;
 
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
-      <img
-        src={item.imgUrl}
-        alt={item.name}
-        style={{ width: "125px", height: "75px", objectFit: "cover" }}
-      />
+      
       <div className="me-auto">
         <div>
           {item.name}{" "}
-          {quantity > 1 && (
-            <span className="text-muted" style={{ fontSize: ".65rem" }}>
-              x{quantity}
-            </span>
-          )}
-        </div>
-        <div className="text-muted" style={{ fontSize: ".75rem" }}>
-          {formatCurrency(item.price)}
+          <img
+          src={item.imgUrl}
+          alt={item.name}
+          style={{ width: "50px", height: "50px", objectFit: "cover" }}
+          />
         </div>
       </div>
+
       <div> {formatCurrency(item.price * quantity)}</div>
-      <Button
-        variant="outline-danger"
-        size="sm"
-        onClick={() => removeFromCart(item.id)}
-      >
-        ×
-      </Button>
+            
+      <div className="d-flex align-items-right justify-content-center">      
+      <Button className="bg-dark" onClick={() => decreaseCartQuantity(item.id)}>-</Button> 
+      <div> 
+      {quantity}    
+      </div>
+      <Button className="bg-dark" onClick={() => increaseCartQuantity(item.id)}>+</Button>
+      </div>
     </Stack>
   );
 }
