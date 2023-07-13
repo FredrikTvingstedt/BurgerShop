@@ -12,7 +12,7 @@ function DropdownMenu() {
       {name: "Orders", path:"/myorders"},
       {name: "Contact", path: "/contact" },
       {name: "About", path: "/about" },
-      {name: "Menu", path: "/store" },
+      {name: "Menu", path: "/menu" },
       {name:"Logout", path:"/login"}
       
     ];

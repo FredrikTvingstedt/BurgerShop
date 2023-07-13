@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Store } from "./components/home/Store";
+import { Menu } from "./components/home/Menu";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 import Home from "./components/home/Home";
 import Footer from "./components/layout/Footer";
@@ -18,10 +18,8 @@ import "./styles/app.scss";
 import "./styles/header.scss";
 import "./styles/home.scss";
 import "./styles/founder.scss";
-import "./styles/menu.scss";
 import "./styles/footer.scss";
 import "./styles/contact.scss";
-import "./styles/cart.scss";
 import "./styles/shipping.scss";
 import "./styles/login.scss";
 import "./styles/profile.scss";
@@ -29,7 +27,6 @@ import "./styles/table.scss";
 import "./styles/orderDetails.scss";
 import "./styles/about.scss";
 import "./styles/notfound.scss";
-import "./styles/shoppingcart.scss";
 import "./styles/cartItem.scss";
 import "./styles/store.scss";
 import "./styles/storeItem.scss";
@@ -46,7 +43,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/me" element={<Profile />} />
-          <Route path="/store" element={<Store />} />
+          <Route path="/menu" element={<Menu />} />
           <Route path="/myorders" element={<MyOrders />} />
           <Route path="/shipping" element={<Shipping />} />
           <Route path="/order/:id" element={<OrderDetails />} />
