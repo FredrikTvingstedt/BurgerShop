@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Classic Hamburger",
     "price": 1,
-    "imgUrl": "/imgs/burger3.png",
+    "imgUrl": "../assets/burger3.png",
     "delay": 0.1
   },
   {
