@@ -21,7 +21,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const tax = subtotal * 0.12;
 
   // Define the shipping charges
-  const shippingCharges = 10;
+  const shippingCharges = 4;
 
   // Calculate the total
   const total = subtotal + tax + shippingCharges;
@@ -49,12 +49,17 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
             Total {formatCurrency(total)}
           </div>
           <div className="ms-auto fw-bold fs-5">
-          <a href="/shipping" className="btn btn-danger">
-            Checkout
-          </a>
+            <Button
+              href="/shipping" 
+              style={{ backgroundColor: 'rgb(156, 0, 60)' }}
+              >
+              Checkout
+            </Button>
           </div>
         </Stack>
       </Offcanvas.Body>
     </Offcanvas>
   );
 }
+
+
