@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "name": "Book",
-    "price": 10.99,
-    "imgUrl": "/imgs/book.jpg",
+    "name": "Cheese Burger",
+    "price": 2,
+    "imgUrl": "/imgs/burger1.png",
     "delay": 0.1
   },
   {
