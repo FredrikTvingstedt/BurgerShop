@@ -1,5 +1,6 @@
 import React from "react";
-import { State } from "country-state-city"; import Popup from "reactjs-popup";
+import { State } from "country-state-city"; 
+import Popup from "reactjs-popup";
 import { Link } from "react-router-dom";
 
 const Shipping = () => { return (
@@ -41,21 +42,11 @@ const Shipping = () => { return (
             <label>Phone Number</label>
             <input type="number" placeholder="Enter Phone Number." />
           </div>
-          <Popup
-              trigger={
-              <Link className="link" to="/myorders"> Confirm Order</Link>
-              }
-              >
-              <div
-              style={{ color: "red",
-              transform: "translate(0%,-500%)", backgroundColor: "#fff",
-              padding: "10px", borderRadius: "5px",
-              boxShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
-              }}
-              >
-              Order Successfully Placed!
-              </div>
-          </Popup>
+          <div className="d-flex align-items-center justify-content-center" style={{ paddingTop: '20px' }}>
+          <a href="/myorders" className="btn btn-danger">
+            Checkout
+          </a>
+          </div>
         </form>
       </main>
     </section>

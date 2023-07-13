@@ -1,4 +1,4 @@
-import { Offcanvas, Stack } from "react-bootstrap";
+import { Offcanvas, Stack, Button } from "react-bootstrap";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
 import { formatCurrency } from "../../utilities/formatCurrency";
 import { CartItem } from "./CartItem";
@@ -47,6 +47,11 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
           </div>
           <div className="ms-auto fw-bold fs-5">
             Total {formatCurrency(total)}
+          </div>
+          <div className="ms-auto fw-bold fs-5">
+          <a href="/shipping" className="btn btn-danger">
+            Checkout
+          </a>
           </div>
         </Stack>
       </Offcanvas.Body>
