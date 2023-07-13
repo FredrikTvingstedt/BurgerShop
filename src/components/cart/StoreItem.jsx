@@ -6,7 +6,7 @@ import Popup from 'reactjs-popup';
 import { motion } from 'framer-motion';
 import 'reactjs-popup/dist/index.css';
 
-export function StoreItem({ id, name, price, imgUrl }) {
+export function StoreItem({ id, name, price, imgUrl, delay }) {
   const {
     getItemQuantity,
     increaseCartQuantity,
@@ -35,11 +35,10 @@ export function StoreItem({ id, name, price, imgUrl }) {
 
   return (
     <motion.div
-      
       initial="hidden"
       animate="visible"
       variants={slideVariants}
-      transition={{ delay: 0.2 }} // Adjust the delay as per your requirement
+      transition={{ delay }} // Individual delay for each item
     >
       <Card className="h-100">
         <div id="storeItem-top"></div>
