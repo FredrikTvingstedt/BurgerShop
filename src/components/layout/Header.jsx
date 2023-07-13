@@ -10,38 +10,39 @@ export function Header() {
   const { openCart, cartQuantity } = useShoppingCart();
   return (
     <NavbarBs>
-        
           <motion.div initial={{ x: "-100%" }} whileInView={{ x: 0 }}>
             <Link className="fastfood" to="/">
               <IoFastFoodOutline />
             </Link>
           </motion.div>
           
-            {cartQuantity >= 0 && (
-            <Button
-                
-                onClick={openCart}
-                style={{ position: "relative"}}
-                variant="dark"
-            >
-                <FiShoppingCart size={20} />
-                <div
-                    className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
-                    style={{
-                        color: "white",
-                        width: "1.5rem",
-                        height: "1.5rem",
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                        transform: "translate(25%, 25%)",
-                    }}
-                    >
-                    {cartQuantity}
-                </div>
-          </Button>
-        )}
-        <DropdownMenu />
+        <div className="d-flex justify-content-end align-items-center">
+              {cartQuantity >= 0 && (
+              <Button
+                  
+                  onClick={openCart}
+                  style={{ position: "relative"}}
+                  variant="dark"
+              >
+                  <FiShoppingCart size={20} />
+                  <div
+                      className="rounded-circle bg-danger d-flex justify-content-center align-items-center"
+                      style={{
+                          color: "white",
+                          width: "1.5rem",
+                          height: "1.5rem",
+                          position: "absolute",
+                          bottom: 0,
+                          right: 0,
+                          transform: "translate(25%, 25%)",
+                      }}
+                      >
+                      {cartQuantity}
+                  </div>
+              </Button>
+              )}
+              <DropdownMenu />
+          </div>
     </NavbarBs>
   );
 }

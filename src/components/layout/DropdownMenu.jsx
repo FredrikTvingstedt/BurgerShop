@@ -22,7 +22,7 @@ function DropdownMenu() {
   return (
     
       <navbar>
-          <div className="btn-group" style={{ paddingLeft: "20px" }}>
+          <div className="btn-group" style={{ marginLeft: "20px" }}>
             <button
               type="button"
               className="btn btn-dark dropdown-toggle"

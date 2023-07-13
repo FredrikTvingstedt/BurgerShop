@@ -4,14 +4,14 @@ nav {
   height: 5rem;
   padding: 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.229);
   background-color: white;
 
   > div {
     display: flex;
     align-items: center;
+    flex-grow: 1; /* Allow the div to grow and take up available space */
+
 
     > svg {
       color: $red;
@@ -42,6 +42,7 @@ nav {
     }
   }
 }
+
 
 
 
