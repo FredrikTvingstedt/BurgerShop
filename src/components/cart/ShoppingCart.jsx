@@ -20,8 +20,12 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
   // Calculate the tax
   const tax = subtotal * 0.12;
 
-  // Define the shipping charges
-  const shippingCharges = 4;
+  // Calculate the shipping charge
+  let shippingCharges = 4;
+
+  if (subtotal < 1 || subtotal > 20) {
+    shippingCharges = 0;
+  }
 
   // Calculate the total
   const total = subtotal + tax + shippingCharges;
@@ -43,7 +47,7 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
             Tax (12%) {formatCurrency(tax)}
           </div>
           <div className="ms-auto fw-bold fs-5">
-            Shipping Charges {formatCurrency(shippingCharges)}
+            {shippingCharges === 0 ? "Free Shipping" : `Shipping Charges ${formatCurrency(shippingCharges)}`}
           </div>
           <div className="ms-auto fw-bold fs-5">
             Total {formatCurrency(total)}
