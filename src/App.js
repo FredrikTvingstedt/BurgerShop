@@ -9,7 +9,7 @@ import Shipping from "./components/cart/Shipping";
 import Login from "./components/login/Login";
 import Profile from "./components/profile/Profile";
 import MyOrders from "./components/myOrders/MyOrders";
-import { Store } from "./pages/Store";
+import { Store } from "./components/home/Store";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext"
 
 import OrderDetails from "./components/myOrders/OrderDetails";
