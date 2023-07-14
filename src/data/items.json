@@ -32,14 +32,14 @@
     "name": "Hot Caramel Sundae",
     "price": 2,
     "imgUrl": "/imgs/milkshake1.png",
-    "delay": 2.9
+    "delay": 1.7
   },
   {
     "id": 6,
     "name": "Quarter Pounder with Cheese",
     "price": 3.5,
     "imgUrl": "/imgs/burger4.png",
-    "delay": 1.7
+    "delay": 2.1
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "name": "Quarter Pounder with Cheese Bacon",
     "price": 4,
     "imgUrl": "/imgs/burger5.png",
-    "delay": 2.1
+    "delay": 2.9
   },
   {
     "id": 9,
