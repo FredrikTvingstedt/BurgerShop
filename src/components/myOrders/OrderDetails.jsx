@@ -1,108 +1,75 @@
 import React from "react";
+import { useShoppingCart } from "../../context/ShoppingCartContext";
+import { useShippingDetails } from "../../context/ShippingDetailsContext";
+import { formatCurrency } from "../../utilities/formatCurrency";
+import storeItems from "../../data/items.json";
 
-const OrderDetails = () => { return (
-    <section className="orderDetails">
-        <main>
-            <h1>Order Details</h1>
-            <div>
-            <h1>Shipping</h1>
-            <p>
-            <b>Address</b>
-            {"sjda 12-32ss dsad"}
-            </p>
-            </div>
-            <div>
-            <h1>Contact</h1>
-            <p>
-            <b>Name</b>
-            {"Stuart"}
-            </p>
-            <p>
-            <b>Phone</b>
-            {2131232123}
-            </p>
-            </div>
-            <div>
-            <h1>Status</h1>
-            <p>
-            <b>Order Status</b>
-            {"Processing"}
-            </p>
-            <p>
-            <b>Placed At</b>
-            {"23-02-2002"}
-            </p>
-            <p>
-            <b>Delivered At</b>
-            {"23-02-2003"}
-            </p>
-            </div>
-            <div>
-            <h1>Payment</h1>
-            <p>
-            <b>Payment Method</b>
-            {"COD"}
-            </p>
-            <p>
-            <b>Payment Reference</b>#{"asdasdsadsad"}
-            </p>
-            <p>
-            <b>Paid At</b>
-            {"23-02-2003"}
-            </p>
-            </div>
-            <div>
-            <h1>Amount</h1>
-            <p>
-            <b>Items Total</b>₹{2132}
-            </p>
-            <p>
-            <b>Shipping Charges</b>₹{200}
-            </p>
-            <p>
-            <b>Tax</b>₹{232}
-            </p>
-            <p>
-            <b>Total Amount</b>₹{232 + 200 + 2132}
-            </p>
-            </div>
-            <article>
-            <h1>Ordered Items</h1>
-            <div>
-            <h4>Cheese Burger</h4>
-            <div>
-            <span>{12}</span> x <span>{232}</span>
-            </div>
-            </div>
-            <div>
-            <h4>Veg Cheese Burger</h4>
-            <div>
-            <span>{10}</span> x <span>{500}</span>
-            </div>
-            </div>
-            <div>
-            <h4>Burger Fries</h4>
-            <div>
-            <span>{10}</span> x <span>{1800}</span>
-            </div>
-            </div>
-            <div>
-            <h4
-            style={{ fontWeight: 800,
-            }}
-            >
-            Sub Total
-            </h4>
-            <div
-            style={{ fontWeight: 800,
-            }}
-            >
-            ₹{2132}
-            </div>
-            </div>
-            </article>
-        </main>
-    </section>
-);
+const MyOrders = () => {
+  const { cartItems } = useShoppingCart();
+  const { shippingDetails } = useShippingDetails();
+
+  // Calculate the subtotal
+  const subtotal = cartItems.reduce((total, cartItem) => {
+    const item = storeItems.find((i) => i.id === cartItem.id);
+    return total + (item?.price || 0) * cartItem.quantity;
+  }, 0);
+
+  // Calculate the tax
+  const tax = subtotal * 0.12;
+
+  // Calculate the shipping charge
+  let shippingCharges = 4;
+
+  if (subtotal < 1 || subtotal > 20) {
+    shippingCharges = 0;
+  }
+
+  // Calculate the total
+  const total = subtotal + tax + shippingCharges;
+
+  return (
+    <div>
+      <h1>My Orders</h1>
+
+      <h2>Shipping Details</h2>
+      <p>
+        <strong>Street Address:</strong> {shippingDetails.streetAddress}
+      </p>
+      <p>
+        <strong>Zip Code:</strong> {shippingDetails.zipCode}
+      </p>
+      <p>
+        <strong>City:</strong> {shippingDetails.city}
+      </p>
+      <p>
+        <strong>Country:</strong> {shippingDetails.country}
+      </p>
+      <p>
+        <strong>State:</strong> {shippingDetails.state}
+      </p>
+      <p>
+        <strong>Phone Number:</strong> {shippingDetails.phoneNumber}
+      </p>
+
+      <h2>Order Details</h2>
+      {cartItems.map((item) => (
+        <div key={item.id}>
+          <h3>{item.name}</h3>
+          <p>Quantity: {item.quantity}</p>
+          <p>Price: {formatCurrency(item.price)}</p>
+        </div>
+      ))}
+
+      <h2>Order Summary</h2>
+      <p>Subtotal: {formatCurrency(subtotal)}</p>
+      <p>Tax (12%): {formatCurrency(tax)}</p>
+      <p>
+        Shipping Charges:{" "}
+        {shippingCharges === 0 ? "Free Shipping" : formatCurrency(shippingCharges)}
+      </p>
+      <p>Total: {formatCurrency(total)}</p>
+    </div>
+  );
 };
-export default OrderDetails;
+
+export default MyOrders;
