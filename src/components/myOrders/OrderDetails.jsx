@@ -28,50 +28,81 @@ const OrderDetails = () => {
   const total = subtotal + tax + shippingCharges;
 
   return (
-    <div>
-      <h1>My Orders</h1>
+    <section className="orderDetails">
+      <main>
+       
+          <h1>Order Details</h1>
+        <div>
+          <h1>Shipping Details</h1>
+          <p>
+            <b>Street Address:</b> {shippingDetails.streetAddress}
+          </p>
+          <p>
+            <b>Zip Code:</b> {shippingDetails.zipCode}
+          </p>
+          <p>
+            <b>City:</b> {shippingDetails.city}
+          </p>
+          <p>
+            <b>Country:</b> {shippingDetails.country}
+          </p>
+          <p>
+            <b>State:</b> {shippingDetails.state}
+          </p>
+          <p>
+            <b>Phone Number:</b> {shippingDetails.phoneNumber}
+          </p>
+          <h1>Contact</h1>
+          <p>
+          <b>Name</b> Add Info
+          </p>
+          <p>
+          <b>Phone Number:</b> Add Info
+          </p>
+          <h1>Status</h1>
+          <p>
+          <b>Order Status</b> Processing
+          </p>
+          <h1>Payment</h1>
+          <p>
+          <b>Payment Method</b> COD
+          </p>
+          <p>
+          <b>Payment Reference</b> #00001
+          </p>
+          <h1>Order Summary</h1>
+          <p>
+          <b>Sub total:</b> {formatCurrency(subtotal)}
+          </p>
+          <p>
+          <b>Tax (12%):</b> {formatCurrency(tax)}
+          </p>
+        
+         
+          <p>
+            Shipping Charges:{" "}
+            {shippingCharges === 0 ? "Free Shipping" : formatCurrency(shippingCharges)}
+          </p>
+          <p>Total: {formatCurrency(total)}</p>
 
-      <h2>Shipping Details</h2>
-      <p>
-        <strong>Street Address:</strong> {shippingDetails.streetAddress}
-      </p>
-      <p>
-        <strong>Zip Code:</strong> {shippingDetails.zipCode}
-      </p>
-      <p>
-        <strong>City:</strong> {shippingDetails.city}
-      </p>
-      <p>
-        <strong>Country:</strong> {shippingDetails.country}
-      </p>
-      <p>
-        <strong>State:</strong> {shippingDetails.state}
-      </p>
-      <p>
-        <strong>Phone Number:</strong> {shippingDetails.phoneNumber}
-      </p>
-
-      <h2>Order Details</h2>
-      {cartItems.map((cartItem) => {
-        const item = storeItems.find((i) => i.id === cartItem.id);
-        return (
-          <div key={cartItem.id}>
-            <h3>{item?.name}</h3>
-            <p>Quantity: {cartItem.quantity}</p>
-            <p>Price: {formatCurrency(item?.price)}</p>
-          </div>
-        );
-      })}
-
-      <h2>Order Summary</h2>
-      <p>Subtotal: {formatCurrency(subtotal)}</p>
-      <p>Tax (12%): {formatCurrency(tax)}</p>
-      <p>
-        Shipping Charges:{" "}
-        {shippingCharges === 0 ? "Free Shipping" : formatCurrency(shippingCharges)}
-      </p>
-      <p>Total: {formatCurrency(total)}</p>
-    </div>
+          <h1>Ordered items</h1>
+          {cartItems.map((cartItem) => {
+            const item = storeItems.find((i) => i.id === cartItem.id);
+            return (
+              <div key={cartItem.id}>
+                <p>
+                <b>{item?.name}</b> {formatCurrency(item?.price)} x {cartItem.quantity}
+                </p>
+              </div>
+              
+            );
+            
+          })}
+            <p>Sub total: {formatCurrency(subtotal)}</p>
+      
+        </div>
+      </main>
+    </section>  
   );
 };
 

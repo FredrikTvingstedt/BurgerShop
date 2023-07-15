@@ -31,6 +31,7 @@ import "./styles/notfound.scss";
 import "./styles/cartItem.scss";
 import "./styles/store.scss";
 import "./styles/storeItem.scss";
+import "./styles/orderDetails.scss";
 
 function App() {
   return (

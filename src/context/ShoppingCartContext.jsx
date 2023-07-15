@@ -74,14 +74,10 @@ export function ShoppingCartProvider({ children }) {
   }
 
   function getItemName(id) {
-    // Logic to get item name based on id
-    // Replace the following line with your implementation
     return "Item Name";
   }
 
   function getItemPrice(id) {
-    // Logic to get item price based on id
-    // Replace the following line with your implementation
     return 0;
   }
 
