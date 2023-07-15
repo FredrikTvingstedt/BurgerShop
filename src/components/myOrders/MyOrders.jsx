@@ -24,8 +24,9 @@ const MyOrders = () => {
     return (
       <section className="tableClass">
         <main>
-          <div>
-            <p>No orders have been made yet</p>
+          <div className="no-orders">
+            <h1>Sorry! There are no orders yet.</h1>
+            <p>Feel free to place an order.</p>
           </div>
         </main>
       </section>

@@ -1,9 +1,14 @@
 @import "colors";
 
+.no-orders{
+  padding-top: 3rem;
+  text-align: center;
+}
+
 .tableClass {
   background-color: $pink;
   width: 100%;
-  height: 100vh;
+  height: 70vh;
 
   main {
     max-width: 900px;
