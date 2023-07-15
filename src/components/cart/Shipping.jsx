@@ -103,7 +103,6 @@ const Shipping = () => {
               onChange={(e) => setCountry(e.target.value)}
             >
               <option value="">Sweden</option>
-              {/* Add more country options if needed */}
             </select>
           </div>
           <div>
@@ -126,13 +125,14 @@ const Shipping = () => {
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
             {phoneNumber.length < 5 && (
-              <p className="error">Phone Number needs to be at least 5 digits long.</p>
+              <p className="error">Phone Number needs to be at least 8 digits long.</p>
             )}
           </div>
           <div className="d-flex align-items-center justify-content-center" style={{ paddingTop: '20px' }}>
             <button
               type="submit"
               className="btn btn-danger"
+              style={{ backgroundColor: 'rgb(156, 0, 60)' }}
               disabled={
                 streetAddress.length < 5 ||
                 zipCode.trim() === "" ||
