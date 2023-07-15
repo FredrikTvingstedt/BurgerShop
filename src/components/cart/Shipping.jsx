@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { State } from "country-state-city";
 import { useShippingDetails } from "../../context/ShippingDetailsContext";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
-import { useNavigate } from "react-router-dom";  // Updated import
+import { useNavigate } from "react-router-dom";
 
 const Shipping = () => {
   const { updateShippingDetails } = useShippingDetails();
@@ -13,10 +13,20 @@ const Shipping = () => {
   const [country, setCountry] = useState("");
   const [state, setState] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const navigate = useNavigate();  // Updated hook
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // Perform validation checks
+    if (
+      streetAddress.length < 5 ||
+      zipCode.trim() === "" ||
+      city.trim() === "" ||
+      phoneNumber.length < 5
+    ) {
+      return; // Exit the function if validation fails
+    }
 
     // Update the shipping details
     updateShippingDetails({
@@ -30,7 +40,19 @@ const Shipping = () => {
 
     // Perform further actions (e.g., redirect to another page)
     // Redirect to /myorders and pass the shipping details and cart details
-    navigate("/myorders", { state: { shippingDetails: { streetAddress, zipCode, city, country, state, phoneNumber }, cartItems } });  // Updated navigation code
+    navigate("/myorders", {
+      state: {
+        shippingDetails: {
+          streetAddress,
+          zipCode,
+          city,
+          country,
+          state,
+          phoneNumber,
+        },
+        cartItems,
+      },
+    });
   };
 
   return (
@@ -46,6 +68,9 @@ const Shipping = () => {
               value={streetAddress}
               onChange={(e) => setStreetAddress(e.target.value)}
             />
+            {streetAddress.length < 5 && (
+              <p className="error">Street address needs to be at least 5 characters long.</p>
+            )}
           </div>
           <div>
             <label>Zip Code</label>
@@ -55,6 +80,9 @@ const Shipping = () => {
               value={zipCode}
               onChange={(e) => setZipCode(e.target.value)}
             />
+            {zipCode.trim() === "" && (
+              <p className="error">Zip Code is required.</p>
+            )}
           </div>
           <div>
             <label>City</label>
@@ -64,6 +92,9 @@ const Shipping = () => {
               value={city}
               onChange={(e) => setCity(e.target.value)}
             />
+            {city.trim() === "" && (
+              <p className="error">City is required.</p>
+            )}
           </div>
           <div>
             <label>Country</label>
@@ -94,9 +125,21 @@ const Shipping = () => {
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
+            {phoneNumber.length < 5 && (
+              <p className="error">Phone Number needs to be at least 5 digits long.</p>
+            )}
           </div>
           <div className="d-flex align-items-center justify-content-center" style={{ paddingTop: '20px' }}>
-            <button type="submit" className="btn btn-danger">
+            <button
+              type="submit"
+              className="btn btn-danger"
+              disabled={
+                streetAddress.length < 5 ||
+                zipCode.trim() === "" ||
+                city.trim() === "" ||
+                phoneNumber.length < 5
+              }
+            >
               Checkout
             </button>
           </div>

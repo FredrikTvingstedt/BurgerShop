@@ -8,6 +8,7 @@ import storeItems from "../../data/items.json";
 
 const MyOrders = () => {
   const { cartItems } = useShoppingCart();
+  const { shippingDetails } = useShippingDetails();
 
   // Calculate the total sum for all items in the cart
   const totalSum = cartItems.reduce((total, cartItem) => {
@@ -18,9 +19,17 @@ const MyOrders = () => {
   // Calculate the total quantity of items in the cart
   const totalQuantity = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
 
-  // Check if shippingDetails.streetAddress is null or subtotal is 0
-  if (!useShippingDetails.streetAddress === null || totalSum === 0) {
-    return null; // Return null to hide the order details section when conditions are not met
+  // Check if shippingDetails.streetAddress is null or totalSum is 0
+  if (!shippingDetails.streetAddress || totalSum === 0) {
+    return (
+      <section className="tableClass">
+        <main>
+          <div>
+            <p>No orders have been made yet</p>
+          </div>
+        </main>
+      </section>
+    );
   }
 
   return (

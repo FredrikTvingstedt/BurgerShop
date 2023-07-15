@@ -47,23 +47,33 @@ export function ShoppingCart({ isOpen }: ShoppingCartProps) {
             Tax (12%) {formatCurrency(tax)}
           </div>
           <div className="ms-auto fw-bold fs-5">
-            {shippingCharges === 0 ? "Free Shipping" : `Shipping Charges ${formatCurrency(shippingCharges)}`}
+            {shippingCharges === 0
+              ? "Free Shipping"
+              : `Shipping Charges ${formatCurrency(shippingCharges)}`}
           </div>
           <div className="ms-auto fw-bold fs-5">
             Total {formatCurrency(total)}
           </div>
           <div className="ms-auto fw-bold fs-5">
-            <Button
-              href="/shipping" 
-              style={{ backgroundColor: 'rgb(156, 0, 60)' }}
+            {total > 0 ? (
+              <Button
+                href="/shipping"
+                style={{ backgroundColor: 'rgb(156, 0, 60)' }}
               >
-              Checkout
-            </Button>
+                Checkout
+              </Button>
+            ) : (
+              <Button
+                href="/shipping"
+                style={{ backgroundColor: 'rgb(156, 0, 60)' }}
+                disabled
+              >
+                Checkout
+              </Button>
+            )}
           </div>
         </Stack>
       </Offcanvas.Body>
     </Offcanvas>
   );
 }
-
-
