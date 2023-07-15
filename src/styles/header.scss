@@ -2,9 +2,9 @@
 
 nav {
   height: 5rem;
-  padding: 2rem;
+  padding: 1rem !important;
   display: flex;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.229);
+  box-shadow: none!important;
   background-color: white;
 
   > div {
@@ -43,6 +43,9 @@ nav {
   }
 }
 
+.drop-drown-menu{
+  margin-left: 10px;
+}
 
 
 

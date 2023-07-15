@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Navbar as NavbarBs } from "react-bootstrap";
 
 
 function DropdownMenu() {
@@ -21,8 +22,7 @@ function DropdownMenu() {
 
   return (
     
-      <navbar>
-          <div className="btn-group" style={{ marginLeft: "20px" }}>
+      <NavbarBs>
             <button
               type="button"
               className="btn btn-dark dropdown-toggle"
@@ -43,8 +43,7 @@ function DropdownMenu() {
                 </li>
               ))}
             </ul>
-          </div>
-      </navbar>
+      </NavbarBs>
    
   );
 }
