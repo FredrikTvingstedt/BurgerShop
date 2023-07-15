@@ -62,6 +62,16 @@
   }
 }
 
+.cart-items{
+       font-weight: 200;
+        white-space: nowrap;
+        letter-spacing: 2px;
+        margin: 2rem;
+        > b {
+          margin-right: 5px;
+        }
+}
+
 @media screen and (max-width: 600px) {
   .orderDetails > main > div {
     > h1 {

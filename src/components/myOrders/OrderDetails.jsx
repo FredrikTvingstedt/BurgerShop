@@ -30,7 +30,6 @@ const OrderDetails = () => {
   return (
     <section className="orderDetails">
       <main>
-       
           <h1>Order Details</h1>
         <div>
           <h1>Shipping Details</h1>
@@ -42,12 +41,6 @@ const OrderDetails = () => {
           </p>
           <p>
             <b>City:</b> {shippingDetails.city}
-          </p>
-          <p>
-            <b>Country:</b> {shippingDetails.country}
-          </p>
-          <p>
-            <b>State:</b> {shippingDetails.state}
           </p>
           <p>
             <b>Phone Number:</b> {shippingDetails.phoneNumber}
@@ -77,29 +70,29 @@ const OrderDetails = () => {
           <p>
           <b>Tax (12%):</b> {formatCurrency(tax)}
           </p>
-        
-         
           <p>
-            Shipping Charges:{" "}
+          <b>Shipping Charges:</b> {" "}
             {shippingCharges === 0 ? "Free Shipping" : formatCurrency(shippingCharges)}
           </p>
-          <p>Total: {formatCurrency(total)}</p>
-
+          <p>
+          <b>Total:</b> {formatCurrency(total)}
+          </p>
           <h1>Ordered items</h1>
+          <div className="cart-items">
           {cartItems.map((cartItem) => {
             const item = storeItems.find((i) => i.id === cartItem.id);
             return (
               <div key={cartItem.id}>
                 <p>
-                <b>{item?.name}</b> {formatCurrency(item?.price)} x {cartItem.quantity}
+                <b>{item?.name}</b> {formatCurrency(item?.price)} <b>x</b> {cartItem.quantity} <b>pcs</b>
                 </p>
               </div>
-              
             );
-            
           })}
-            <p>Sub total: {formatCurrency(subtotal)}</p>
-      
+          </div>
+          <p>
+           <b>Sub total: </b> {formatCurrency(subtotal)}
+          </p>
         </div>
       </main>
     </section>  
