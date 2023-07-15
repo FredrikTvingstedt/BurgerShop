@@ -17,6 +17,8 @@
     height: 100%;
     padding: 2rem;
     overflow-x: auto;
+    border-top: solid $pink 1px;
+    border-bottom: solid $pink 1px;
 
     > table {
       width: 100%;

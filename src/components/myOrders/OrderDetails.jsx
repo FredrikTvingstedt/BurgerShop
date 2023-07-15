@@ -1,4 +1,5 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
 import { useShippingDetails } from "../../context/ShippingDetailsContext";
 import { formatCurrency } from "../../utilities/formatCurrency";
@@ -7,6 +8,8 @@ import storeItems from "../../data/items.json";
 const OrderDetails = () => {
   const { cartItems } = useShoppingCart();
   const { shippingDetails } = useShippingDetails();
+  const location = useLocation();
+  const orderId = location.state?.orderId || "";
 
   // Calculate the subtotal
   const subtotal = cartItems.reduce((total, cartItem) => {
@@ -30,8 +33,11 @@ const OrderDetails = () => {
   return (
     <section className="orderDetails">
       <main>
-          <h1>Order Details</h1>
+        <h1>Order Details</h1>
         <div>
+          <p> 
+            <b>Order Id:</b>#{orderId}
+          </p>
           <h1>Shipping Details</h1>
           <p>
             <b>Street Address:</b> {shippingDetails.streetAddress}
@@ -47,55 +53,55 @@ const OrderDetails = () => {
           </p>
           <h1>Contact</h1>
           <p>
-          <b>Name</b> Add Info
+            <b>Name</b> Add Info
           </p>
           <p>
-          <b>Phone Number:</b> Add Info
+            <b>Phone Number:</b> Add Info
           </p>
           <h1>Status</h1>
           <p>
-          <b>Order Status</b> Processing
+            <b>Order Status</b> Processing
           </p>
           <h1>Payment</h1>
           <p>
-          <b>Payment Method</b> COD
+            <b>Payment Method</b> COD
           </p>
           <p>
-          <b>Payment Reference</b> #00001
+            <b>Payment Reference</b> #{orderId}
           </p>
           <h1>Order Summary</h1>
           <p>
-          <b>Sub total:</b> {formatCurrency(subtotal)}
+            <b>Sub total:</b> {formatCurrency(subtotal)}
           </p>
           <p>
-          <b>Tax (12%):</b> {formatCurrency(tax)}
+            <b>Tax (12%):</b> {formatCurrency(tax)}
           </p>
           <p>
-          <b>Shipping Charges:</b> {" "}
+            <b>Shipping Charges:</b>{" "}
             {shippingCharges === 0 ? "Free Shipping" : formatCurrency(shippingCharges)}
           </p>
           <p>
-          <b>Total:</b> {formatCurrency(total)}
+            <b>Total:</b> {formatCurrency(total)}
           </p>
           <h1>Ordered items</h1>
           <div className="cart-items">
-          {cartItems.map((cartItem) => {
-            const item = storeItems.find((i) => i.id === cartItem.id);
-            return (
-              <div key={cartItem.id}>
-                <p>
-                <b>{item?.name}</b> {formatCurrency(item?.price)} <b>x</b> {cartItem.quantity} <b>pcs</b>
-                </p>
-              </div>
-            );
-          })}
+            {cartItems.map((cartItem) => {
+              const item = storeItems.find((i) => i.id === cartItem.id);
+              return (
+                <div key={cartItem.id}>
+                  <p>
+                    <b>{item?.name}</b> {formatCurrency(item?.price)} <b>x</b> {cartItem.quantity} <b>pcs</b>
+                  </p>
+                </div>
+              );
+            })}
           </div>
           <p>
-           <b>Sub total: </b> {formatCurrency(subtotal)}
+            <b>Sub total: </b> {formatCurrency(subtotal)}
           </p>
         </div>
       </main>
-    </section>  
+    </section>
   );
 };
 

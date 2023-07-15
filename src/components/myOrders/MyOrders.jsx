@@ -16,6 +16,8 @@ const MyOrders = () => {
     return total + (item?.price || 0) * cartItem.quantity;
   }, 0);
 
+  const orderId = "00001";
+
   // Calculate the total quantity of items in the cart
   const totalQuantity = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
 
@@ -50,15 +52,15 @@ const MyOrders = () => {
 
           <tbody>
             <tr>
-              <td>#00001</td>
+              <td>{orderId}</td>
               <td>Processing</td>
               <td>{totalQuantity}</td>
               <td>{formatCurrency(totalSum)}</td>
               <td>COD</td>
               <td>
-                <Link to={`/order/${"00001"}`}>
-                  <AiOutlineEye />
-                </Link>
+              <Link to={`/order/${orderId}`} state={{ orderId }}>
+              <AiOutlineEye />
+              </Link>
               </td>
             </tr>
           </tbody>
