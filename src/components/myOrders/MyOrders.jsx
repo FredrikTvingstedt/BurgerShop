@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
 import { useShoppingCart } from "../../context/ShoppingCartContext";
+import { useShippingDetails } from "../../context/ShippingDetailsContext";
 import { formatCurrency } from "../../utilities/formatCurrency";
 import storeItems from "../../data/items.json";
 
@@ -17,6 +18,11 @@ const MyOrders = () => {
   // Calculate the total quantity of items in the cart
   const totalQuantity = cartItems.reduce((total, cartItem) => total + cartItem.quantity, 0);
 
+  // Check if shippingDetails.streetAddress is null or subtotal is 0
+  if (!useShippingDetails.streetAddress === null || totalSum === 0) {
+    return null; // Return null to hide the order details section when conditions are not met
+  }
+
   return (
     <section className="tableClass">
       <main>
@@ -26,7 +32,7 @@ const MyOrders = () => {
               <th>Order Id</th>
               <th>Status</th>
               <th>Item Qty</th>
-              <th>Sub Total</th>
+              <th>Total Sum</th>
               <th>Payment Method</th>
               <th>Order Details</th>
             </tr>
