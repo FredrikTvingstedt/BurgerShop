@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 import { ShoppingCart } from "../components/cart/ShoppingCart";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
@@ -9,6 +9,8 @@ const ShoppingCartContext = createContext({
   increaseCartQuantity: (id) => {},
   decreaseCartQuantity: (id) => {},
   removeFromCart: (id) => {},
+  getItemName: (id) => "",
+  getItemPrice: (id) => 0,
   cartQuantity: 0,
   cartItems: [],
 });
@@ -71,6 +73,18 @@ export function ShoppingCartProvider({ children }) {
     });
   }
 
+  function getItemName(id) {
+    // Logic to get item name based on id
+    // Replace the following line with your implementation
+    return "Item Name";
+  }
+
+  function getItemPrice(id) {
+    // Logic to get item price based on id
+    // Replace the following line with your implementation
+    return 0;
+  }
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -80,6 +94,8 @@ export function ShoppingCartProvider({ children }) {
         removeFromCart,
         openCart,
         closeCart,
+        getItemName,
+        getItemPrice,
         cartItems,
         cartQuantity,
       }}

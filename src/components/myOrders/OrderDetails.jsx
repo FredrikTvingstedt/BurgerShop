@@ -4,7 +4,7 @@ import { useShippingDetails } from "../../context/ShippingDetailsContext";
 import { formatCurrency } from "../../utilities/formatCurrency";
 import storeItems from "../../data/items.json";
 
-const MyOrders = () => {
+const OrderDetails = () => {
   const { cartItems } = useShoppingCart();
   const { shippingDetails } = useShippingDetails();
 
@@ -52,13 +52,16 @@ const MyOrders = () => {
       </p>
 
       <h2>Order Details</h2>
-      {cartItems.map((item) => (
-        <div key={item.id}>
-          <h3>{item.name}</h3>
-          <p>Quantity: {item.quantity}</p>
-          <p>Price: {formatCurrency(item.price)}</p>
-        </div>
-      ))}
+      {cartItems.map((cartItem) => {
+        const item = storeItems.find((i) => i.id === cartItem.id);
+        return (
+          <div key={cartItem.id}>
+            <h3>{item?.name}</h3>
+            <p>Quantity: {cartItem.quantity}</p>
+            <p>Price: {formatCurrency(item?.price)}</p>
+          </div>
+        );
+      })}
 
       <h2>Order Summary</h2>
       <p>Subtotal: {formatCurrency(subtotal)}</p>
@@ -72,4 +75,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default OrderDetails;
