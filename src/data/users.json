@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "username": "Admin",
+    "password": "Password",
+    "name": "Admin",
+    "phonenumber" : 70123456789111,
+    "email" : "admin@burgershop.se" 
+  },
+  {
+    "id": 2,
+    "username": "Guest",
+    "password": "Password",
+    "name": "Guest",
+    "phonenumber" : 70123456789112,
+    "email" : "guest@burgershop.se"  
+  }
+]
