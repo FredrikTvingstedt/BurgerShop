@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { MDBContainer, MDBTabs, MDBTabsItem, MDBTabsLink, MDBTabsContent, MDBTabsPane, MDBBtn, MDBInput, MDBModal, MDBModalDialog, MDBModalContent, MDBModalBody, MDBModalFooter } from "mdb-react-ui-kit";
 import { useAuth } from "../../context/AuthContext";
+import usersData from "../../data/users.json";
 
 function Login() {
   const [justifyActive, setJustifyActive] = useState("tab1");
@@ -29,9 +30,12 @@ function Login() {
     const email = document.getElementById("form1").value;
     const password = document.getElementById("form2").value;
 
-    // Check if the username and password are correct
-    // For the sake of this example, let's assume the correct username and password are "Guest" and "Password"
-    if (email === "Guest" && password === "Password") {
+    // Check if the username and password match any user data in the usersData array
+    const matchedUser = usersData.find(
+      (user) => user.username === email && user.password === password
+    );
+
+    if (matchedUser) {
       login(email, password);
     } else {
       // If the credentials are incorrect, show the incorrect credentials modal
