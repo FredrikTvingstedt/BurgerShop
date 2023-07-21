@@ -103,7 +103,7 @@ const Contact = () => {
         <button type="submit" onClick={sendEmail}>Send</button>
       </motion.form>
       <Popup open={showPopup} onClose={closePopup}>
-        <div style={{color:"green", backgroundColor: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'}}>
+        <div style={{color:"black", backgroundColor: '#fff', padding: '10px', borderRadius: '5px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.2)'}}>
           <h3>Email sent successfully</h3>
           <p>Thank you for contacting us! We will get back to you shortly.</p>
         </div>

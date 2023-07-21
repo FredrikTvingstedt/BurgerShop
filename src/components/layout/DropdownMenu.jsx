@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar as NavbarBs } from "react-bootstrap";
-import { useAuth } from "../../context/AuthContext"; // Import the useAuth hook
+import { useAuth } from "../../context/AuthContext"; 
 
 function DropdownMenu() {
   const [navLinks, setNavLinks] = useState([]);
-  const { logout } = useAuth(); // Access the logout function from the useAuth hook
+  const { logout } = useAuth(); 
 
   useEffect(() => {
     const navs = [
-      { name: "Home", path: "/" },
+      { name: "Home", path: "/home" },
       { name: "Menu", path: "/menu" },
       { name: "Orders", path: "/myorders" },
       { name: "About", path: "/about" },
@@ -39,7 +39,6 @@ function DropdownMenu() {
             </Link>
           </li>
         ))}
-        {/* Add the "Logout" button to the menu */}
         <li>
           <button className="dropdown-item" type="button" onClick={logout}>
             Logout

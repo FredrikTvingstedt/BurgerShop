@@ -4,14 +4,13 @@ nav {
   height: 5rem;
   padding: 1rem !important;
   display: flex;
-  box-shadow: none!important;
+  box-shadow: none !important;
   background-color: white;
 
   > div {
     display: flex;
     align-items: center;
     flex-grow: 1; 
-
 
     > svg {
       color: $red;
@@ -31,23 +30,35 @@ nav {
         color: $red;
         transition: inherit;
         font-size: 2rem;
+
         &:hover {
           color: $lightdark;
         }
-      }
-
-      &.fastfood svg {
-        font-size: 4rem;
       }
     }
   }
 }
 
-.drop-drown-menu{
-  margin-left: 10px;
+.custom-button {
+  max-width: 100px;
+  margin: 0 10px; 
+  padding: 10px 20px; 
+  background-color: #332d2d !important;
+  color: #fff !important;
+  box-shadow: 0 4px 9px -4px #332d2d !important;
+  border-radius: 0.25rem !important;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+  
+  &:hover {
+    background-color: #252121 !important;
+    color: #fff !important;
+    box-shadow: 0 8px 9px -4px rgba(51,45,45,.3), 0 4px 18px 0 rgba(51,45,45,.2) !important;
+  }
 }
 
-
+.drop-drown-menu {
+  margin-left: 10px;
+}
 
 @media screen and (max-width: 600px) {
   nav {

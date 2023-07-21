@@ -1,3 +1,28 @@
-.login{
+/* Apply the background image to the background-image class */
+section {
+    height: 100vh;
+    background-image: url("../assets/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .login {
     height: 80vh;
-}
+    background-color: white;
+  }
+  
+  .active-tab {
+    background-color: #333 !important;
+    color: #fff !important;
+  }
+  
+  .inactive-tab {
+    background-color: #f1f1f1 !important;
+    color: #333 !important;
+  }
+  
+  input[type="username"]:focus,
+  input[type="password"]:focus {
+    background-color: #f7f7f7;
+  }
+  

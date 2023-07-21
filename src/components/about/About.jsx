@@ -12,7 +12,7 @@ const About = () => { return (
                 <h4>Burger Shop</h4>
                 <p>This is Burger Shop. The place for most tasty burgers on the enitre earth.</p>
                 <p>Explore the various type of food and burgers. Click below to see the menu</p>
-                <Link to="/#menu">
+                <Link to="/menu">
                 <RiFindReplaceLine />
                 </Link>
             </article>

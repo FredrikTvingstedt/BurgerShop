@@ -43,10 +43,10 @@ function App() {
             <Header isAuthenticated={true} />
             
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/about" element={<About />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/" element={<Login />} />
               <Route path="/me" element={<Profile />} />
               <Route path="/menu" element={<Menu />} />
               <Route path="/myorders" element={<MyOrders />} />

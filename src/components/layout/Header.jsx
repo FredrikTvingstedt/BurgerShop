@@ -48,13 +48,31 @@ export function Header() {
             </div>
           </>
         ) : null} {/* If the user is not logged in, do not show the cart and dropdown menu */}
-        <div className="login-button">
+        <div className="about-button">
           {user ? null : ( // If the user is not logged in, show the Login button
-            <Link to="/login">
-              <Button>Login</Button>
+          
+            <Link to="/about">
+              <Button className="custom-button">About</Button>
             </Link>
           )}
         </div>
+        <div className="contact-button">
+          {user ? null : ( // If the user is not logged in, show the Login button
+          
+            <Link to="/contact">
+              <Button className="custom-button">Contact</Button>
+            </Link>
+          )}
+        </div>
+        <div className="login-button">
+          {user ? null : ( // If the user is not logged in, show the Login button
+          
+            <Link to="/">
+              <Button className="custom-button">Login</Button>
+            </Link>
+          )}
+        </div>
+     
       </div>
     </NavbarBs>
   );

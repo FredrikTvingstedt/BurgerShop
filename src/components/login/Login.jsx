@@ -48,13 +48,14 @@ function Login() {
   };
 
   return (
+  <section>
     <MDBContainer className="p-3 my-5 d-flex flex-column w-50 login">
       {user ? ( // If the user is authenticated, show the logout button
         <div>
           <h2>Welcome, {user.name}!</h2>
           <p><b>Email:</b> {user.email}</p>
           <p><b>Phone number:</b> {user.phonenumber}</p>
-          <MDBBtn className="mb-4 w-100" onClick={handleLogout}>
+          <MDBBtn className="mb-4 w-100 btn-dark" onClick={handleLogout}>
             Logout
           </MDBBtn>
         </div>
@@ -62,27 +63,35 @@ function Login() {
         <>
           <MDBTabs pills justify className="mb-3 d-flex flex-row justify-content-between">
             <MDBTabsItem>
-              <MDBTabsLink onClick={() => handleJustifyClick("tab1")} active={justifyActive === "tab1"}>
+              <MDBTabsLink
+                onClick={() => handleJustifyClick("tab1")}
+                active={justifyActive === "tab1"}
+                className={justifyActive === "tab1" ? "active-tab" : ""}
+              >
                 Login
               </MDBTabsLink>
             </MDBTabsItem>
             <MDBTabsItem>
-              <MDBTabsLink onClick={() => handleJustifyClick("tab2")} active={justifyActive === "tab2"}>
+              <MDBTabsLink
+                onClick={() => handleJustifyClick("tab2")}
+                active={justifyActive === "tab2"}
+                className={justifyActive === "tab2" ? "active-tab" : ""}
+              >
                 Register
               </MDBTabsLink>
             </MDBTabsItem>
           </MDBTabs>
           <MDBTabsContent>
             <MDBTabsPane show={justifyActive === "tab1"}>
-              <MDBInput wrapperClass="mb-4" label="Username" id="form1" type="username" />
-              <MDBInput wrapperClass="mb-4" label="Password" id="form2" type="password" />
-              <MDBBtn className="mb-4 w-100" onClick={handleLogin}>
+              <MDBInput wrapperClass="mb-4 input" label="Username" id="form1" type="username" />
+              <MDBInput wrapperClass="mb-4 input" label="Password" id="form2" type="password" />
+              <MDBBtn className="mb-4 w-100 btn-dark" onClick={handleLogin}>
                 Sign in
               </MDBBtn>
             </MDBTabsPane>
             <MDBTabsPane show={justifyActive === "tab2"}>
               {/* Your registration form input fields here */}
-              <MDBBtn className="mb-4 w-100" onClick={handleSignUp}>
+              <MDBBtn className="mb-4 w-100 btn-dark" onClick={handleSignUp}>
                 Sign up
               </MDBBtn>
             </MDBTabsPane>
@@ -103,7 +112,7 @@ function Login() {
               <p><b>Password:</b> Password</p>
             </MDBModalBody>
             <MDBModalFooter>
-              <MDBBtn color="secondary" onClick={closeModal}>
+              <MDBBtn className="btn-dark" onClick={closeModal}>
                 Close
               </MDBBtn>
             </MDBModalFooter>
@@ -120,7 +129,7 @@ function Login() {
               <p>Incorrect <b>Username</b> or <b>Password</b>.</p>
             </MDBModalBody>
             <MDBModalFooter>
-              <MDBBtn color="secondary" onClick={closeModal}>
+              <MDBBtn className="btn-dark" onClick={closeModal}>
                 Close
               </MDBBtn>
             </MDBModalFooter>
@@ -128,6 +137,7 @@ function Login() {
         </MDBModalDialog>
       </MDBModal>
     </MDBContainer>
+  </section>
   );
 }
 
