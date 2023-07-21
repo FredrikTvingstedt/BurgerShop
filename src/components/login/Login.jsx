@@ -34,10 +34,12 @@ function Login() {
   };
 
   return (
-    <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
+    <MDBContainer className="p-3 my-5 d-flex flex-column w-50 login">
       {user ? ( // If the user is authenticated, show the logout button
         <div>
           <h2>Welcome, {user.name}!</h2>
+          <spam><b>Email:</b> {user.email}</spam>
+          <p><b>Phonenumber:</b> {user.phonenumber}</p>
           <MDBBtn className="mb-4 w-100" onClick={handleLogout}>
             Logout
           </MDBBtn>
@@ -58,7 +60,7 @@ function Login() {
           </MDBTabs>
           <MDBTabsContent>
             <MDBTabsPane show={justifyActive === "tab1"}>
-              <MDBInput wrapperClass="mb-4" label="Email address" id="form1" type="email" />
+              <MDBInput wrapperClass="mb-4" label="Username" id="form1" type="username" />
               <MDBInput wrapperClass="mb-4" label="Password" id="form2" type="password" />
               <MDBBtn className="mb-4 w-100" onClick={handleLogin}>
                 Sign in
