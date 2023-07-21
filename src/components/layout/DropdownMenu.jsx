@@ -10,12 +10,10 @@ function DropdownMenu() {
     const navs = [
       {name: "Login", path: "/login" },
       {name: "Home", path: "/" },
-      {name: "Orders", path:"/myorders"},
-      {name: "Contact", path: "/contact" },
-      {name: "About", path: "/about" },
       {name: "Menu", path: "/menu" },
-      {name:"Logout", path:"/login"}
-      
+      {name: "Orders", path:"/myorders"},
+      {name: "About", path: "/about" },
+      {name: "Contact", path: "/contact" }
     ];
     setNavLinks(navs);
   }, []);
