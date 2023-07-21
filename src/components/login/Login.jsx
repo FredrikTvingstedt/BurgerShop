@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { MDBContainer, MDBTabs, MDBTabsItem, MDBTabsLink, MDBTabsContent, MDBTabsPane, MDBBtn, MDBInput, MDBModal, MDBModalDialog, MDBModalContent, MDBModalBody, MDBModalFooter } from "mdb-react-ui-kit";
-import { useAuth } from  "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 function Login() {
   const [justifyActive, setJustifyActive] = useState("tab1");
   const [showModal, setShowModal] = useState(false); // State to control the modal visibility
+  const [incorrectCredentialsModal, setIncorrectCredentialsModal] = useState(false); // State to control incorrect credentials modal
   const { login, user, logout } = useAuth(); // Access the login, user, and logout functions from the useAuth hook
 
   const handleJustifyClick = (value) => {
@@ -20,13 +21,22 @@ function Login() {
 
   const closeModal = () => {
     setShowModal(false); // Close the modal
+    setIncorrectCredentialsModal(false); // Close the incorrect credentials modal
   };
 
   const handleLogin = () => {
     // Implement the login logic here, e.g., using the email and password from the input fields
     const email = document.getElementById("form1").value;
     const password = document.getElementById("form2").value;
-    login(email, password);
+
+    // Check if the username and password are correct
+    // For the sake of this example, let's assume the correct username and password are "Guest" and "Password"
+    if (email === "Guest" && password === "Password") {
+      login(email, password);
+    } else {
+      // If the credentials are incorrect, show the incorrect credentials modal
+      setIncorrectCredentialsModal(true);
+    }
   };
 
   const handleLogout = () => {
@@ -82,11 +92,28 @@ function Login() {
           <MDBModalContent>
             <MDBModalBody>
               <p>
-                Sorry, it's not possible to register right now. 
+                Sorry, it's not possible to register right now.
                 But feel free to log in with the following credentials:
               </p>
-              <p>Username: Guest</p>
-              <p>Password: Password</p>
+              <p><b>Username:</b> Guest</p>
+              <p><b>Password:</b> Password</p>
+            </MDBModalBody>
+            <MDBModalFooter>
+              <MDBBtn color="secondary" onClick={closeModal}>
+                Close
+              </MDBBtn>
+            </MDBModalFooter>
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
+
+      {/* Modal for displaying incorrect credentials */}
+      <MDBModal show={incorrectCredentialsModal} tabIndex="-1">
+        <MDBModalDialog>
+          <MDBModalContent>
+            <MDBModalBody>
+              <p>Sorry!</p>
+              <p>Incorrect <b>Username</b> or <b>Password</b>.</p>
             </MDBModalBody>
             <MDBModalFooter>
               <MDBBtn color="secondary" onClick={closeModal}>
