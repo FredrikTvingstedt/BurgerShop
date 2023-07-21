@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Menu } from "./components/home/Menu";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 import { ShippingDetailsProvider } from "./context/ShippingDetailsContext";
+import { AuthProvider } from "./context/AuthContext";
 import Home from "./components/home/Home";
 import Footer from "./components/layout/Footer";
 import Header from "./components/layout/Header";
@@ -35,28 +36,30 @@ import "./styles/orderDetails.scss";
 
 function App() {
   return (
-    <ShippingDetailsProvider>
-      <ShoppingCartProvider>  
-        <Router>
-          <Header isAuthenticated={true} />
-          
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/me" element={<Profile />} />
-            <Route path="/menu" element={<Menu />} />
-            <Route path="/myorders" element={<MyOrders />} />
-            <Route path="/shipping" element={<Shipping />} />
-            <Route path="/order/:id" element={<OrderDetails />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+    <AuthProvider>
+      <ShippingDetailsProvider>
+        <ShoppingCartProvider>  
+          <Router>
+            <Header isAuthenticated={true} />
+            
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/me" element={<Profile />} />
+              <Route path="/menu" element={<Menu />} />
+              <Route path="/myorders" element={<MyOrders />} />
+              <Route path="/shipping" element={<Shipping />} />
+              <Route path="/order/:id" element={<OrderDetails />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
 
-          <Footer />
-        </Router>
-      </ShoppingCartProvider>
-    </ShippingDetailsProvider>
+            <Footer />
+          </Router>
+        </ShoppingCartProvider>
+      </ShippingDetailsProvider>
+    </AuthProvider>  
   );
 }
 
