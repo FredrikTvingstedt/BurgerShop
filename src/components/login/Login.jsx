@@ -53,7 +53,7 @@ function Login() {
         <div>
           <h2>Welcome, {user.name}!</h2>
           <p><b>Email:</b> {user.email}</p>
-          <p><b>Phonenumber:</b> {user.phonenumber}</p>
+          <p><b>Phone number:</b> {user.phonenumber}</p>
           <MDBBtn className="mb-4 w-100" onClick={handleLogout}>
             Logout
           </MDBBtn>
