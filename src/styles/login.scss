@@ -1,13 +1,19 @@
 /* Apply the background image to the background-image class */
 section {
     height: 100vh;
-    background-image: url("../assets/bg.png");
+    background-image: url("../assets/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .login-form{
+    
+    padding-top: 100px;
+  }
   
   .login {
-    height: 80vh;
+    height: 42vh;
+    border-radius: 2rem;
     background-color: white;
   }
   

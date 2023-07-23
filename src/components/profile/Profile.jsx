@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import me from "../../assets/profile.png";
 import { Link } from "react-router-dom";
-import { MdDashboard } from "react-icons/md";
+
 
 const Profile = () => {
   const options = {
@@ -35,22 +35,6 @@ const Profile = () => {
         >
           <Link to="/myorders">Orders</Link>
         </motion.div>
-
-        <motion.button
-          initial={{
-            x: "-100vw",
-            opacity: 0,
-          }}
-          animate={{
-            x: 0,
-            opacity: 1,
-          }}
-          transition={{
-            delay: 0.3,
-          }}
-        >
-          Logout
-        </motion.button>
       </main>
     </section>
   );

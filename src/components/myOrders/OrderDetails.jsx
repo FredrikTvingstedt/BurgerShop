@@ -4,12 +4,14 @@ import { useShoppingCart } from "../../context/ShoppingCartContext";
 import { useShippingDetails } from "../../context/ShippingDetailsContext";
 import { formatCurrency } from "../../utilities/formatCurrency";
 import storeItems from "../../data/items.json";
+import { useAuth } from "../../context/AuthContext";
 
 const OrderDetails = () => {
   const { cartItems } = useShoppingCart();
   const { shippingDetails } = useShippingDetails();
   const location = useLocation();
   const orderId = location.state?.orderId || "";
+  const user = useAuth().user; // G
 
   // Calculate the subtotal
   const subtotal = cartItems.reduce((total, cartItem) => {
@@ -53,10 +55,10 @@ const OrderDetails = () => {
           </p>
           <h1>Contact</h1>
           <p>
-            <b>Name</b> Add Info
+            <b>Name</b> {user.name}
           </p>
           <p>
-            <b>Phone Number:</b> Add Info
+            <b>Phone Number:</b> {user.phonenumber}
           </p>
           <h1>Status</h1>
           <p>
