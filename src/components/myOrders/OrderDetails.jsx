@@ -11,7 +11,7 @@ const OrderDetails = () => {
   const { shippingDetails } = useShippingDetails();
   const location = useLocation();
   const orderId = location.state?.orderId || "";
-  const user = useAuth().user; // G
+  const user = useAuth().user; 
 
   // Calculate the subtotal
   const subtotal = cartItems.reduce((total, cartItem) => {

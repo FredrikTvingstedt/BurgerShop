@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Navbar as NavbarBs } from "react-bootstrap";
-import { useAuth } from "../../context/AuthContext"; 
 
 function DropdownMenu() {
   const [navLinks, setNavLinks] = useState([]);
-  const { logout } = useAuth(); 
+
 
   useEffect(() => {
     const navs = [
@@ -15,6 +14,7 @@ function DropdownMenu() {
       { name: "About", path: "/about" },
       { name: "Contact", path: "/contact" },
       { name: "My Account", path: "/me" },
+      { name: "Logout", path: "/" },
     ];
     setNavLinks(navs);
   }, []);
@@ -40,11 +40,6 @@ function DropdownMenu() {
             </Link>
           </li>
         ))}
-        <li>
-          <button className="dropdown-item" type="button" onClick={logout}>
-            Logout
-          </button>
-        </li>
       </ul>
     </NavbarBs>
   );
