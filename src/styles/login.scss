@@ -1,5 +1,5 @@
 /* Apply the background image to the background-image class */
-section {
+#login-section {
     height: 100vh;
     background-image: url("../assets/bg.jpg");
     background-repeat: no-repeat;
@@ -7,7 +7,6 @@ section {
   }
 
   .login-form{
-    
     padding-top: 100px;
   }
   
@@ -28,6 +27,9 @@ section {
   }
   
   input[type="username"]:focus,
+  input[type="email"]:focus,
+  input[type="name"]:focus,
+  input[type="phone"]:focus,
   input[type="password"]:focus {
     background-color: #f7f7f7;
   }

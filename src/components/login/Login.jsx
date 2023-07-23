@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { MDBContainer, MDBTabs, MDBTabsItem, MDBTabsLink, MDBTabsContent, MDBTabsPane, MDBBtn, MDBInput, MDBModal, MDBModalDialog, MDBModalContent, MDBModalBody, MDBModalFooter } from "mdb-react-ui-kit";
 import { useAuth } from "../../context/AuthContext";
 import usersData from "../../data/users.json";
@@ -48,15 +49,21 @@ function Login() {
   };
 
   return (
-  <section>
+  <section id="login-section">
     <div className="login-form">
       <MDBContainer className="p-3 my-5 d-flex flex-column w-50 login">
         {user ? ( // If the user is authenticated, show the logout button
           <div>
-            <h2>Welcome!</h2>
+            <h2>Welcome, {user.username}!</h2>
             <p><b>Name:</b> {user.name}</p>
             <p><b>Phone number:</b> {user.phonenumber}</p>
             <p><b>Email:</b> {user.email}</p>
+            <Link to="/home">
+            <p><b>Go to Home</b></p>
+            </Link>
+            <Link to="/me">
+            <p><b>Visit My Account</b></p>
+            </Link>
             <MDBBtn className="mb-4 w-100 btn-dark" onClick={handleLogout}>
               Logout
             </MDBBtn>
@@ -94,7 +101,7 @@ function Login() {
               <MDBTabsPane show={justifyActive === "tab2"}>
                 <MDBInput wrapperClass="mb-4 input" label="Name" id="form3" type="name" />
                 <MDBInput wrapperClass="mb-4 input" label="Phone number" id="form3" type="phone" />
-                <MDBInput wrapperClass="mb-4 input" label="Email" id="form3" type="emal" />
+                <MDBInput wrapperClass="mb-4 input" label="Email" id="form3" type="email" />
                 <MDBBtn className="mb-4 w-100 btn-dark" onClick={handleSignUp}>
                   Sign up
                 </MDBBtn>

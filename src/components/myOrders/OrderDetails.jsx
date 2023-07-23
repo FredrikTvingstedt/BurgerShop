@@ -60,6 +60,9 @@ const OrderDetails = () => {
           <p>
             <b>Phone Number:</b> {user.phonenumber}
           </p>
+          <p>
+            <b>Email:</b> {user.email}
+          </p>
           <h1>Status</h1>
           <p>
             <b>Order Status</b> Processing

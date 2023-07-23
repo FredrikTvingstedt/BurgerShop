@@ -14,6 +14,7 @@ function DropdownMenu() {
       { name: "Orders", path: "/myorders" },
       { name: "About", path: "/about" },
       { name: "Contact", path: "/contact" },
+      { name: "My Account", path: "/me" },
     ];
     setNavLinks(navs);
   }, []);

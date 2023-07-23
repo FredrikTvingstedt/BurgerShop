@@ -24,48 +24,52 @@ const MyOrders = () => {
   // Check if shippingDetails.streetAddress is null or totalSum is 0
   if (!shippingDetails.streetAddress || totalSum === 0) {
     return (
-      <section className="tableClass">
-        <main>
-          <div className="no-orders">
-            <h1>Sorry! There are no orders yet.</h1>
-            <p>Feel free to place an order.</p>
+        <section className="tableClass">
+          <div className="myOrder">
+            <main>
+              <div className="no-orders">
+                <h1>Sorry! There are no orders yet.</h1>
+                <p>Feel free to place an order.</p>
+              </div>
+            </main>
           </div>
-        </main>
-      </section>
+        </section>
     );
   }
 
   return (
     <section className="tableClass">
-      <main>
-        <table>
-          <thead>
-            <tr>
-              <th>Order Id</th>
-              <th>Status</th>
-              <th>Item Qty</th>
-              <th>Total Sum</th>
-              <th>Payment Method</th>
-              <th>Order Details</th>
-            </tr>
-          </thead>
+      <div className="myOrder">
+        <main>
+          <table>
+            <thead>
+              <tr>
+                <th>Order Id</th>
+                <th>Status</th>
+                <th>Item Qty</th>
+                <th>Total Sum</th>
+                <th>Payment Method</th>
+                <th>Order Details</th>
+              </tr>
+            </thead>
 
-          <tbody>
-            <tr>
-              <td>{orderId}</td>
-              <td>Processing</td>
-              <td>{totalQuantity}</td>
-              <td>{formatCurrency(totalSum)}</td>
-              <td>COD</td>
-              <td>
-              <Link to={`/order/${orderId}`} state={{ orderId }}>
-              <AiOutlineEye />
-              </Link>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </main>
+            <tbody>
+              <tr>
+                <td>{orderId}</td>
+                <td>Processing</td>
+                <td>{totalQuantity}</td>
+                <td>{formatCurrency(totalSum)}</td>
+                <td>COD</td>
+                <td>
+                <Link to={`/order/${orderId}`} state={{ orderId }}>
+                <AiOutlineEye />
+                </Link>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </main>
+      </div> 
     </section>
   );
 };

@@ -3,16 +3,18 @@
     "id": 1,
     "username": "Admin",
     "password": "Password",
-    "name": "Admin",
+    "name": "Administrator",
     "phonenumber" : 70123456789111,
-    "email" : "admin@burgershop.se" 
+    "email" : "Administrator@Burgershop.se",
+    "imgUrl": "/imgs/burger3.png" 
   },
   {
     "id": 2,
     "username": "Guest",
     "password": "Password",
-    "name": "Guest",
+    "name": "John Doe",
     "phonenumber" : 70123456789112,
-    "email" : "guest@burgershop.se"  
+    "email" : "John-Doe@Burgershop.se",
+    "imgUrl": "/imgs/burger3.png"  
   }
 ]

@@ -5,12 +5,21 @@
   text-align: center;
 }
 
+.myOrder{
+  padding-top: 20vh;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
 .tableClass {
-  background-color: $pink;
+  background-image: url("../assets/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
 
   main {
+    margin-top: 10vh;
     max-width: 900px;
     background-color: white;
     margin: auto;
@@ -19,6 +28,7 @@
     overflow-x: auto;
     border-top: solid $pink 1px;
     border-bottom: solid $pink 1px;
+    border-radius: 25px;
 
     > table {
       width: 100%;
