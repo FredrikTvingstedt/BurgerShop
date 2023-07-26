@@ -5,7 +5,7 @@ IBM SkillUp - Front End Capstone Project
 https://burgershop-fredriktvingstedt.vercel.app/
 
 # Build
-Run npm install -s
+Run npm install
 
 # Run Server
 Run npm start
