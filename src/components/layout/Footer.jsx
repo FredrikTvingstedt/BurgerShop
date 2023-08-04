@@ -11,7 +11,7 @@ const Footer = () => {
 
             <aside>
                 <h4>Follow Us</h4>
-                <a href="https://github.com/FredrikTvingstedt/BurgerShop" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/FredrikTvingstedt/" target="_blank" rel="noopener noreferrer">
                     <AiFillGithub />
                 </a>
             </aside>
