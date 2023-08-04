@@ -3,7 +3,7 @@
 ## Production Deployment
 [https://burgershop-fredriktvingstedt.vercel.app/](https://burgershop-fredriktvingstedt.vercel.app/)
 
-## Documentation / Info about the Project
+## Documentation
 For detailed information about the project, including its architecture, features, and implementation details, please refer to the project documentation:
 [Final Capstone Project - By Fredrik Tvingstedt.pdf](https://github.com/FredrikTvingstedt/BurgerShop/blob/main/Final%20Capstone%20Project%20-%20By%20Fredrik%20Tvingstedt.pdf)
 
