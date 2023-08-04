@@ -32,7 +32,7 @@ return (
             </div>
 
             <motion.a className="explore-button"
-                href="#menu" 
+                href="/home/#menu" 
                 initial={{
                 y: "-100%",
                 opacity: 0,
