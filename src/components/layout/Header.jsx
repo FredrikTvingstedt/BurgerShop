@@ -49,7 +49,7 @@ export function Header() {
           </>
         ) : null} {/* If the user is not logged in, do not show the cart and dropdown menu */}
         <div className="about-button">
-          {user ? null : ( // If the user is not logged in, show the Login button
+          {user ? null : ( // If the user is not logged in, show the About button
           
             <Link to="/about">
               <Button className="custom-button">About</Button>
@@ -57,7 +57,7 @@ export function Header() {
           )}
         </div>
         <div className="contact-button">
-          {user ? null : ( // If the user is not logged in, show the Login button
+          {user ? null : ( // If the user is not logged in, show the Contact button
           
             <Link to="/contact">
               <Button className="custom-button">Contact</Button>
