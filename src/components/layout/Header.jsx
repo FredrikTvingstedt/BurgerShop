@@ -21,7 +21,7 @@ export function Header() {
         {user ? ( // Check if the user is logged in
           <>
             {cartQuantity >= 0 && (
-              <div className="cart-button">
+              <div className="cart-icon">
               <Button
                 className="cart-button"
                 onClick={openCart}
