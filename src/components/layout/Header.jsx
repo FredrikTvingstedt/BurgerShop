@@ -23,6 +23,7 @@ export function Header() {
             {cartQuantity >= 0 && (
               <div className="cart-button">
               <Button
+                className="cart-button"
                 onClick={openCart}
                 style={{ position: "relative" }}
                 variant="dark"
