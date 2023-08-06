@@ -19,6 +19,7 @@ import About from "./components/about/About";
 import "./styles/app.scss";
 import "./styles/header.scss";
 import "./styles/home.scss";
+import "./styles/menu.scss";
 import "./styles/founder.scss";
 import "./styles/footer.scss";
 import "./styles/contact.scss";

@@ -21,6 +21,7 @@ export function Header() {
         {user ? ( // Check if the user is logged in
           <>
             {cartQuantity >= 0 && (
+              <div className="cart-button">
               <Button
                 onClick={openCart}
                 style={{ position: "relative" }}
@@ -42,6 +43,7 @@ export function Header() {
                   {cartQuantity}
                 </div>
               </Button>
+              </div>
             )}
             <div className="drop-drown-menu">
               <DropdownMenu />

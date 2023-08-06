@@ -5,6 +5,7 @@ import storeItems from "../../data/items.json"
 export function Menu() {
   return (
   <section id="menu"> 
+  <div className="menu">
     <>
       <h1>Menu</h1>
       <Row md={2} xs={1} lg={3} className="g-3">
@@ -15,7 +16,8 @@ export function Menu() {
         ))}
       </Row>
     </>
-    </section>
+    </div>
+  </section>
   )
 }
 
